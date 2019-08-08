@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-修饰符、内部类、参数传递" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/08/修饰符、内部类、参数传递/" class="article-date">
+  <time datetime="2019-08-08T03:05:13.462Z" itemprop="datePublished">2019-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><p>final：最终的，不可改变的</p>
+<p>修饰：</p>
+<p>​        1.类：最终类，不可继承 </p>
+<p>​       </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        2方法：最终方法，不可重写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> 方法名（参数列表）&#123;</span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        3.变量：最终变量，值不能改变</p>
+<p>​                1.局部变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> 变量类型 变量；<span class="comment">//基本数据类型，只能定义一次，之后不能改变值</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">int</span>[]arr=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];<span class="comment">//引用数据类型，它的地址定义后不能改变，但是地址对应的内部数据可以改变</span></span><br></pre></td></tr></table></figure>
+
+<p>​                2.成员变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="keyword">final</span> 类型 成员变量的名字；</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> String CLASS_NAME=<span class="string">"JavaEE86"</span>;<span class="comment">//名字一般大写，每个单词之间用_隔开</span></span><br></pre></td></tr></table></figure>
+
+<p>【特点】不能改变，只能赋值一次，一定要做赋值</p>
+<p>赋值方法：1.直接赋值2.借助构造方法赋值</p>
+<p>扩展：</p>
+<p>注意：setter不能用来进行给final成员变量赋值，不能保证只执行一次</p>
+<hr>
+<h3 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h3><p>static：静态</p>
+<p>作用：可以用来修饰成员，被static修饰的成员叫做类成员==【静态成员】</p>
+<p>使用特点：不管修饰什么成员，静态成员被该类型的所有对象所共享</p>
+<h5 id="修饰成员变量"><a href="#修饰成员变量" class="headerlink" title="修饰成员变量"></a>修饰成员变量</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="keyword">static</span> 类型 成员变量；</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String classname；<span class="comment">//静态变量</span></span><br></pre></td></tr></table></figure>
+
+<p>特点：1.使用对象访问，2.类名直接访问【推荐使用】</p>
+<p><em>不管用什么方式访问静态变量，始终访问的时同一个数据</em></p>
+<p><em>静态成员优先与对象而存在</em> </p>
+<p><strong>扩展</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">构造代码块：</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//构造代码块</span></span><br><span class="line"><span class="comment">//在构造方法执行前，执行一次</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">静态代码块：</span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line"><span class="comment">//静态代码块</span></span><br><span class="line"><span class="comment">//为了给静态变量进行赋值</span></span><br><span class="line"><span class="comment">//随着类的加载而加载一次，会优先与构造执行，优先于main方法执行。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如果同时有构造代码块，静态代码块，main方法</span><br><span class="line"></span><br><span class="line">先执行静态代码块，在执行main方法，然后如果创建了对象，先执行构造代码块，在执行构造方法。</span><br><span class="line"></span><br><span class="line">（如果有多个对象被创建了，那么在每个对象被创建之前，都会执行一次构造代码块）</span><br></pre></td></tr></table></figure>
+
+<h4 id="四种权限修饰符"><a href="#四种权限修饰符" class="headerlink" title="四种权限修饰符"></a>四种权限修饰符</h4><p>public&gt;protected&gt;default&gt;private</p>
+<ol>
+<li>类型：只能使用==public==或者==default==</li>
+<li>构造方法：一般使用public，方便创建对象。也可以按需使用 </li>
+<li>成员变量：封装使用private，也可以按需使用</li>
+<li>成员方法：一般使用public，也可按需使用</li>
+</ol>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>有一个类，在一个类的内部</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 外部类</span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> 内部类</span>&#123;</span><br><span class="line">        </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>内部类的使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.成员内部类所在类中使用</span></span><br><span class="line"><span class="comment">    1）内部类访问外部类【Heart访问Person】</span></span><br><span class="line"><span class="comment">       在内部类方法中，默认有一个外部类的对象：外部类名.this</span></span><br><span class="line"><span class="comment">       如果要访问外部类成员，可以直接使用，外部类名.this.成员</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       如果局部变量  内部类成员变量   外部类成员变量 名字冲突：</span></span><br><span class="line"><span class="comment">       直接访问     this.            外部类名.this.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    2）外部类访问内部类【Person访问Heart】</span></span><br><span class="line"><span class="comment">        外部类方法中没有成员内部类的默认对象。</span></span><br><span class="line"><span class="comment">        如果要访问内部类成员，创建内部类对象，通过对象访问。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">2.成员内部类所在类外使用</span></span><br><span class="line"><span class="comment">    需要创建内部类的对象</span></span><br><span class="line"><span class="comment">    需要借助外部类对象进行创建</span></span><br><span class="line"><span class="comment">    格式：</span></span><br><span class="line"><span class="comment">    外部类名.内部类类名  对象名 = 外部类对象.new 内部类构造方法();</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="局部内部类的使用及final问题"><a href="#局部内部类的使用及final问题" class="headerlink" title="局部内部类的使用及final问题"></a>局部内部类的使用及final问题</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.方法使用局部内部类</span></span><br><span class="line"><span class="comment">    先创建局部内部类的对象，使用对象访问。创建对象时时，需要先定义类后使用类。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">2.局部内部类中访问方法中的变量</span></span><br><span class="line"><span class="comment">    1.可以直接访问，只能访问类定义之前的变量。</span></span><br><span class="line"><span class="comment">    2.如果局部内部类要访问方法中的变量，要保证该变量是最终的，不可改变的变量。</span></span><br><span class="line"><span class="comment">      建议在改变量前加上final关键字。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//System.out.println(i1);</span></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> i1 = <span class="number">10</span>; <span class="comment">//被局部内部类访问的局部变量，需要时final的变量</span></span><br><span class="line">        System.out.println(i1);</span><br><span class="line">        <span class="comment">//i1 = 100;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//不能创建内部类对象，需要先定义后使用</span></span><br><span class="line">        <span class="comment">//Inner o1 = new Inner();</span></span><br><span class="line"></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;<span class="comment">//局部内部类</span></span><br><span class="line">            <span class="keyword">private</span> <span class="keyword">int</span> num1 = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"num1 = "</span> + num1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                System.out.println(<span class="string">"i1 = "</span> + i1);</span><br><span class="line">                <span class="comment">//System.out.println("i2 = " + i2);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//可以</span></span><br><span class="line">        Inner o1 = <span class="keyword">new</span> Inner();</span><br><span class="line">        o1.show();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h4><p>没有类名的内部类</p>
+<p>匿名内部类的存在，必须有一个父类或者父接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 父类或者父接口（）&#123;</span><br><span class="line">    <span class="comment">//重写父类或者父接口中的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<ol>
+<li>结合匿名对象一次性使用<ol>
+<li>一次性调用方法</li>
+<li>一次性当作实参</li>
+<li>一次性当作返回值</li>
+</ol>
+</li>
+<li>也可以使用有名对象进行接收匿名子类对象</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/08/修饰符、内部类、参数传递/" data-id="cjz23n6pb0002xovjbsqszgzb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/08/我的第一篇博客/" class="article-date">
+  <time datetime="2019-08-08T03:04:23.000Z" itemprop="datePublished">2019-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/08/我的第一篇博客/">我的第一篇博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/08/我的第一篇博客/" data-id="cjz23n6oj0001xovj1w33kwlh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/08/hello-world/" class="article-date">
+  <time datetime="2019-08-08T02:59:26.971Z" itemprop="datePublished">2019-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/08/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/08/hello-world/" data-id="cjz23n6nl0000xovju17gchv5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/08/修饰符、内部类、参数传递/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/08/我的第一篇博客/">我的第一篇博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
